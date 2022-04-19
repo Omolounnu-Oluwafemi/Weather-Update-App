@@ -1,0 +1,187 @@
+@import url("@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  background: linear-gradient(
+    to right,
+    rgba(172, 102, 102, 0.979),
+    rgba(255, 146, 22, 0.938)
+  );
+}
+
+.wrapper {
+  background: whitesmoke;
+  border-radius: 7px;
+  min-width: 25%;
+}
+.wrapper header {
+  color: rgb(172, 102, 102);
+  font-size: 21px;
+  font-weight: 500;
+  padding: 16px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgb(172, 102, 102);
+}
+header i {
+  cursor: pointer;
+  font-size: 0px;
+  margin-right: 8px;
+}
+.wrapper.active header i {
+  font-size: 30px;
+  margin-left: 5px;
+}
+.wrapper .input-part {
+  margin: 20px 25px 30px;
+}
+.wrapper.active .input-part {
+  display: none;
+}
+.input-part .info-txt {
+  display: none;
+  font-size: 17px;
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+}
+.info-txt.error {
+  display: block;
+  color: #fff;
+  background: rgb(236, 28, 28);
+  border: 1px solid #f5c6cb;
+}
+.info-txt.pending {
+  display: block;
+  color: rgb(255, 255, 255);
+  background: rgb(255, 146, 22);
+  border: 1px solid #bee5eb;
+}
+.input-part :where(input, button) {
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 7px;
+}
+.input-part input {
+  text-align: center;
+  border: 1px solid rgb(172, 102, 102);
+}
+.input-part input:is(:focus, :valid) {
+  border: 2px solid rgba(255, 0, 0, 0.233);
+}
+.input-part .separator {
+  height: 1px;
+  width: 300px;
+  margin: 25px 0;
+  background: rgb(172, 102, 102);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input-part button {
+  color: #fff;
+  cursor: pointer;
+  background: rgb(172, 102, 102);
+}
+.separator::before {
+  content: "or";
+  color: #fff;
+  font-size: 15px;
+  padding: 0 15px;
+  background: rgba(255, 146, 22, 0.904);
+}
+.wrapper .weather-part {
+  margin: 30px 0 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.wrapper.active .weather-part {
+  display: flex;
+}
+.weather-part img {
+  max-width: 300px;
+  max-height: 150px;
+}
+.weather-part .temp {
+  display: flex;
+  font-size: 72px;
+  font-weight: 500;
+}
+.weather-part .temp .numb {
+  font-weight: 600;
+}
+.weather-part .temp .deg {
+  font-size: 40px;
+  margin: 10px 5px 0 0;
+  display: block;
+}
+.weather-part .weather {
+  font-size: 21px;
+  text-align: center;
+  margin: -5px 20px 15px;
+}
+.weather-part .location {
+  font-size: 21px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.location i {
+  font-size: 22px;
+  margin-right: 5px;
+}
+.weather-part .location {
+  font-size: 21px;
+  display: flex;
+  align-items: center;
+}
+.weather-part .bottom-details {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #bfbfbf;
+  justify-content: space-between;
+}
+.bottom-details .column {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.column i {
+  font-size: 40px;
+  color: #43affc;
+}
+.column.humidity {
+  border-left: 1px solid #bfbfbf;
+}
+.details .temp,
+.humidity span {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: -3px;
+}
+.details .temp .deg {
+  margin: 0;
+  font-size: 17px;
+  pad: 0 2px 0 1px;
+}
+.details p {
+  font-size: 14px;
+  margin-top: -6px;
+}
